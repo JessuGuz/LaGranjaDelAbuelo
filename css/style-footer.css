@@ -1,0 +1,41 @@
+.contenido-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8em;
+    color: #cccccc;
+}
+
+.informacion-footer p {
+    font-size: 0.9em;
+    margin: 0.2em 0;
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 1em;
+}
+
+.redes-sociales a {
+    color: #cccccc;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.redes-sociales a:hover {
+    color: #8aae65;
+}
+
+.direccion {
+    display: flex;
+    justify-content: center;
+}
+
+.direccion p {
+    margin: 0;
+}
+
+.direccion p a {
+    text-decoration: none;
+    color: rgb(194, 53, 53);
+}

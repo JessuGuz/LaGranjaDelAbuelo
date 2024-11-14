@@ -1,0 +1,169 @@
+@media (max-width: 1024px) {
+
+    .contenedor,
+    .reseña,
+    .contenido {
+        display: grid;
+    }
+
+    .reseña {
+        gap: 0;
+    }
+}
+
+@media (max-width: 820px) {
+
+    .contenedor,
+    .contenido,
+    .reseña {
+        display: grid;
+    }
+
+    .expan p {
+        font-size: 0.89em;
+    }
+
+    .reseña {
+        gap: 0;
+    }
+
+    .contenido:hover h2 {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .encabezado {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        min-height: auto;
+    }
+
+    .encabezado h1 {
+        font-size: 2em;
+        margin-right: 0;
+    }
+
+    .navegacion {
+        justify-content: center;
+    }
+
+    .menu {
+        flex-direction: row;
+        gap: 3px;
+        padding: 0;
+    }
+
+    .menu::-webkit-scrollbar {
+        display: none;
+    }
+
+    .menu li {
+        flex-shrink: 0;
+    }
+
+    .menu li a {
+        padding: 0.5em;
+    }
+
+    .contenido {
+        content: "";
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .descripcion p {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-left: 100px;
+        font-size: 1em;
+        margin: 0 60px;
+    }
+
+    .contenedor,
+    .descripcion p {
+        display: block;
+        gap: 15px;
+    }
+
+    .contenedo {
+        width: 100%;
+    }
+
+    .contenedor-frutas,
+    .contenido {
+        display: grid;
+    }
+
+    .contenedor-video iframe {
+        width: 80%;
+    }
+
+    .principal h2 {
+        font-size: 1.8em;
+    }
+
+    .expandible {
+        margin-bottom: 20px;
+    }
+
+    .expandible p {
+        font-size: 1em;
+    }
+
+    .foto {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .principal h2 {
+        font-size: 1.5em;
+    }
+
+    .foto {
+        width: 50px;
+        height: 50px;
+    }
+
+    .reseña {
+        flex-direction: column;
+        align-items: center;
+        display: block;
+        font-size: 0.83em;
+    }
+
+    .texto-reseña h3,
+    .texto-reseña p,
+    .descripcion p {
+        text-align: center;
+    }
+
+    .principal,
+    .expandible {
+        margin: 0 0 20px 0;
+    }
+
+    .contenido:hover h2 {
+        margin-left: 0;
+    }
+
+    .descripcion p {
+        margin: 0;
+        font-size: 1em;
+    }
+
+    .informacion-footer p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 344px) {
+    .reseña {
+        font-size: 0.83em;
+    }
+}

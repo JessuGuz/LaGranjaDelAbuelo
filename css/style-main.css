@@ -1,0 +1,374 @@
+.principal {
+    max-width: 1200px;
+    background-color: #a4c47e;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+.contenido {
+    display: flex;
+    align-items: center;
+    height: 300px;
+    position: relative;
+}
+
+.contenido h2 {
+    font-size: 2em;
+    text-align: center;
+    flex: 1;
+    white-space: nowrap;
+    transition: margin-rigth 0.3s ease;
+    -webkit-transition: margin-rigth 0.3s ease;
+    -moz-transition: margin-rigth 0.3s ease;
+    -ms-transition: margin-rigth 0.3s ease;
+    -o-transition: margin-rigth 0.3s ease;
+    color: #4d4d33;
+}
+
+.descripcion {
+    display: none;
+    color: #4d4d33;
+}
+
+.descripcion p {
+    font-size: 1.1em;
+    line-height: 1.3;
+    text-align: justify;
+    margin: 0 80px;
+    margin-left: 150px;
+}
+
+.conten {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    margin-top: 20px;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.conten h2 {
+    font-size: 1.7em;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    text-align: center;
+    color: #4d4d33;
+}
+
+.conten h3 {
+    font-size: 1.4em;
+}
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    max-width: 1200px;
+}
+
+.contenedor h3 {
+    font-size: 1.4em;
+}
+
+.contenedor-frutas {
+    display: flex;
+    gap: 10px;
+}
+
+.contenedor-video {
+    aspect-ratio: 16 / 9;
+    display: none;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    max-height: 200px;
+    z-index: 2;
+}
+
+.contenedor-video iframe {
+    width: 100%;
+    height: auto;
+}
+
+.expandible {
+    flex: 1;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+
+.expan,
+.expandible {
+    color: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    flex-direction: column;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.expan {
+    flex: 2;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.expan img {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.expan h3,
+.expan p {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+}
+
+.expan::before,
+.expandible::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.expan p,
+.expandible p {
+    display: none;
+    font-size: 1.1em;
+    margin: 20px 40px;
+    text-align: justify;
+    z-index: 2;
+}
+
+.expan p a,
+.expandible p a {
+    text-decoration: none;
+    color: #8aae65;
+}
+
+.expan h2,
+.expan h3 {
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.expandible h2 {
+    z-index: 2;
+}
+
+.expandible:nth-child(1) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/img/verduras1);
+}
+
+.expandible:nth-child(2) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/img/verduras2);
+}
+
+.expandible:nth-child(3) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/img/verduras3.jpg);
+}
+
+.expandible:nth-child(4) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/img/verduras4.jpeg);
+}
+
+.expan:hover p,
+.expandible:hover p {
+    display: block;
+}
+
+.expan:hover h2,
+.expan:hover h3 {
+    margin-bottom: 10px;
+    opacity: 1;
+}
+
+.expan:hover h3 {
+    position: relative;
+}
+
+.expandible:hover h2 {
+    margin-bottom: 10px;
+}
+
+.expandible:nth-child(4):hover .contenedor-video {
+    display: flex;
+}
+
+.expandible:hover,
+.expan:hover {
+    flex: 4;
+    opacity: 1;
+}
+
+.expan:hover img{
+    transform: scale(1.2);
+}
+
+.contenedor-frutas:hover .expandible:not(:hover), .contenedor-frutas:hover .expan:not(:hover) {
+    opacity: 0.5;
+}
+
+.contenido:hover h2 {
+    margin-left: 100px;
+}
+
+.contenido:hover .descripcion {
+    display: block;
+}
+
+.reseña:hover {
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+button[type="submit"]:hover {
+    background-color: #8aae65;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 1em;
+    color: #4d4d33;
+}
+
+input[type="text"],
+input[type="file"],
+input[type="email"],
+textarea {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    font-size: 1em;
+    color: #000000;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #a4c47e;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #4d4d33;
+}
+
+.reseñas {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.reseña,
+.res {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    transition: box-shadow 0.3s ease;
+    color: #4d4d33;
+}
+
+.reseña {
+    justify-content: center;
+    gap: 100px;
+}
+
+.res {
+    justify-content: flex-start;
+}
+
+.nueva-reseña {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    margin-top: 20px;
+}
+
+.nueva-reseña h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    text-align: center;
+    margin-top: 15px;
+    color: #4d4d33;
+}
+
+.texto-reseña {
+    display: flex;
+    flex-direction: column;
+    color: #4d4d33;
+}
+
+.texto-reseña h3 {
+    font-size: 1.2em;
+    margin: 0;
+    font-weight: bold;
+}
+
+.texto-reseña p {
+    font-size: 1em;
+    margin-top: 5px;
+    text-align: justify;
+    line-height: 1.5;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-style: italic;
+}
+
+.foto {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    margin-left: 40px;
+    border: 3px solid #a4c47e;
+}

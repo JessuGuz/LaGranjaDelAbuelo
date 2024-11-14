@@ -1,0 +1,40 @@
+@import url("/css/style-header.css");
+@import url("/css/style-main.css");
+@import url("/css/style-footer.css");
+@import url("/css/style-media.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css");
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-height: 100%;
+    background-color: #fcf2f2;
+}
+
+header {
+    overflow: hidden;
+    width: 100%;
+}
+
+main {
+    padding: 20px;
+    margin: auto;
+    max-width: 1200px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 10px 5px;
+    background: rgba(44, 44, 44, 1);
+    position: relative;
+    width: 100%;
+}
