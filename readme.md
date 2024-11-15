@@ -33,4 +33,4 @@ Facilita tus compras de frutas y hortalizas
 2024 copyright
 
 ## Hosting
-Para ver la página en vivo, visita la URL: [Enlace de la página en GitHub Pages o Netlify]
+Para ver la página en vivo, visita la URL: https://jessuguz.github.io/LaGranjaDelAbuelo/
