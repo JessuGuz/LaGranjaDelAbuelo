@@ -18,12 +18,16 @@
     text-align: center;
     flex: 1;
     white-space: nowrap;
-    transition: margin-rigth 0.3s ease;
-    -webkit-transition: margin-rigth 0.3s ease;
-    -moz-transition: margin-rigth 0.3s ease;
-    -ms-transition: margin-rigth 0.3s ease;
-    -o-transition: margin-rigth 0.3s ease;
+    /*transition: margin-rigth 0.3s ease;
+    -webkit-transition: margin-rigth 10s all;
+    -moz-transition: margin-rigth 10s all;
+    -ms-transition: margin-rigth 10s all;
+    -o-transition: margin-rigth 10s all;*/
     color: #4d4d33;
+}
+
+.contenido:hover h2 {
+    margin-left: 100px;
 }
 
 .descripcion {
@@ -39,6 +43,10 @@
     margin-left: 150px;
 }
 
+.contenido:hover .descripcion {
+    display: block;
+}
+
 .conten {
     flex-direction: column;
     align-items: center;
@@ -49,7 +57,7 @@
     margin-top: 20px;
     max-width: 1200px;
     display: flex;
-    flex-wrap: wrap;
+    /*flex-wrap: wrap;*/
     gap: 15px;
 }
 
@@ -68,6 +76,7 @@
 .contenedor {
     display: flex;
     flex-wrap: wrap;
+    /*revisar*/
     gap: 15px;
     max-width: 1200px;
 }
@@ -101,6 +110,13 @@
     height: 300px;
     background-size: cover;
     background-position: center;
+    transition: flex 1s ease-in-out;
+    /*agregado 15/11*/
+    --webkit-transition: flex 1s ease-;
+    -moz-transition: flex 1s ease-in-out;
+    -ms-transition: flex 1s ease-in-out;
+    -o-transition: flex 1s ease-in-out;
+    -webkit-transition: flex 1s ease-in-out;
 }
 
 .expan,
@@ -118,8 +134,8 @@
 
 .expan {
     flex: 2;
-    max-width: 100%;
-    border-radius: 10px;
+    /*max-width: 100%;
+    border-radius: 10px;*/
 }
 
 .expan img {
@@ -144,8 +160,8 @@
     margin: 0;
 }
 
-.expan::before,
-.expandible::before {
+.expandible::before,
+.expan::before {
     content: "";
     position: absolute;
     top: 0;
@@ -154,6 +170,7 @@
     bottom: 0;
     background: rgba(0, 0, 0, 0.4);
     z-index: 1;
+    /*revisar*/
     border-radius: 10px;
 }
 
@@ -230,26 +247,23 @@
     display: flex;
 }
 
-.expandible:hover,
 .expan:hover {
+    flex: 3;
+    opacity: 1;
+}
+
+.expandible:hover {
     flex: 4;
     opacity: 1;
 }
 
-.expan:hover img{
+.expan:hover img {
     transform: scale(1.2);
 }
 
-.contenedor-frutas:hover .expandible:not(:hover), .contenedor-frutas:hover .expan:not(:hover) {
+.contenedor-frutas:hover .expandible:not(:hover),
+.contenedor-frutas:hover .expan:not(:hover) {
     opacity: 0.5;
-}
-
-.contenido:hover h2 {
-    margin-left: 100px;
-}
-
-.contenido:hover .descripcion {
-    display: block;
 }
 
 .reseña:hover {

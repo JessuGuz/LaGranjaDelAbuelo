@@ -49,16 +49,21 @@
 
 .menu li a {
     color: #ffffff;
-    padding: 1em;
+    padding: 0.5em;
     text-decoration: none;
 }
 
 .menu li a:hover {
-    background: #a4c47e;
-    border-radius: 10px;
+    background: #a5c47ec1;
     color: #f0f0f0;
+    border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+    transition: background 1s;
+    -webkit-transition: background 1s;
+    -moz-transition: background 1s;
+    -ms-transition: background 1s;
+    -o-transition: background 1s;
 }
