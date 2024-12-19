@@ -5,11 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reseñas - La Granja del Abuelo</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/style-header.css">
-    <link rel="stylesheet" href="../css/style-main.css">
-    <link rel="stylesheet" href="../css/style-footer.css">
-    <link rel="stylesheet" href="../css/style-media.css">
+    <link rel="stylesheet" href="../css/style-resena.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap"
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -82,7 +78,7 @@
 
         <section class="nueva-reseña">
             <h2>Nueva Reseña</h2>
-            <form action="#" method="post">
+            <form id="reseña-form"><!-- <form action="#" method="post"> -->
                 <label for="nombre">Nombre y Apellido:</label>
                 <input type="text" id="nombre" name="nombre" required>
 
@@ -91,6 +87,11 @@
 
                 <button type="submit">Enviar</button>
             </form>
+        </section>
+        <section class="nueva-reseña">
+            <h2>Reseñas Recientes</h2>
+            <div id="reseñas-container">
+            </div>
         </section>
     </main>
 
@@ -117,6 +118,7 @@
             </div>
         </div>
     </footer>
+    <script src="../js/script-resena.js"></script>
 </body>
 
 </html>

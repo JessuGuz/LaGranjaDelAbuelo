@@ -5,12 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos - La Granja del Abuelo</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/style-header.css">
-    <link rel="stylesheet" href="../css/style-main.css">
-    <link rel="stylesheet" href="../css/style-footer.css">
-    <link rel="stylesheet" href="../css/style-media.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style-producto.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
@@ -29,11 +27,41 @@
                     <li><a href="../pages/productos.html">Productos</a></li>
                     <li><a href="../pages/resenas.html">Reseñas</a></li>
                     <li><a href="../pages/contacto.html">Contacto</a></li>
+                    <img id="carrito-btn" src="../img/car.svg" alt="Carrito" class="carrito-icon" />
+
+                    <div id="modal-carrito" class="modal">
+                        <div class="modal-contenido">
+                            <div style="display: flex; justify-content: space-between;">
+                                <h2>Carrito de Compras</h2>
+                                <button id="cerrar-carrito" class="btn-cerrar">x</button>
+                            </div>
+                            <ul id="lista-carrito" class="lista-carrito"></ul>
+                            <div style="display: flex; justify-content: space-between;">
+                                <div class="total">
+                                    <strong>Total: </strong><span id="total-carrito">$0.00</span>
+                                </div>
+                                <button id="comprar-btn" class="btn-comprar">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="formulario-pago" class="modal-formulario" style="display: none;">
+                        <div class="formulario-contenido">
+                            <h3>Forma de Pago</h3>
+                            <form id="form-pago" action="https://formspree.io/f/mvgoegrd" method="POST">
+                                <input type="text" name="nombre" placeholder="Nombre" required><br>
+                                <input type="text" name="apellido" placeholder="Apellido" required><br>
+                                <input type="number" name="edad" placeholder="Edad" required><br>
+                                <input type="email" name="email" placeholder="Correo electrónico" required><br>
+                                <button type="submit" class="btn-aceptar">Aceptar</button>
+                            </form>
+                            <button class="btn-cerrar" id="cerrar-formulario">Cerrar</button>
+                        </div>
+                    </div>
                 </ul>
             </nav>
-        </section>
+        </section>  
     </header>
-
     <main>
         <section class="principal">
             <div class="contenido">
@@ -44,207 +72,452 @@
                 </div>
             </div>
         </section>
+        
+<div class="section">
+            <div class="section-header">
+                <div class="products container" id="lista-2">
+                    <h2>Nuestras hortalizas</h2>
+                    <button class="toggle-button">Ver mas</button>
+                </div>
+                <div class="product-content">
+                    <div class="product">
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/ajo.jpg" alt="Ajo">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Ajo</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="19">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/auyama.jpg" alt="Auyama">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Auyama</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="20">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/cebolla.jpg" alt="Cebolla">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Cebolla</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="21">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/maiz.jpg" alt="Maiz">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Maiz</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="22">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/papa.jpg" alt="Papa">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Papa</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="23">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/platano.jpg" alt="Platano">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Platano</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="25">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/remolacha.jpg" alt="Remolacha">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Remolacha</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="26">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/repollo.jpg" alt="Repollo">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Repollo</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="27">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/tomate.jpg" alt="Tomate">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Tomate</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="28">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/zanahoria.jpg" alt="Zanahoria">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Zanahoria</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="29">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/coliflor.jpg" alt="Coliflor">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Coliflor</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="30">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/rucula.jpg" alt="Rucula">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Rucula</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="31">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/rabano.jpg" alt="Rabano">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Rabano</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="32">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/lechuga.jpg" alt="Lechuga">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Lechuga</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="33">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/brocoli.jpg" alt="Brocoli">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Brocoli</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="34">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/berenjena.jpg" alt="Berenjena">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Berenjena</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="35">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/acelga.jpg" alt="Acelga">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Acelga</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="36">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/pimenton.jpg" alt="Pimenton">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Pimenton</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="36">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-header">
+                <div class="p1 products container" id="lista-1">
+                    <h2>Nuestras frutas</h2>
+                    <button class="btn1 toggle-button">Ver mas</button>
+                </div>
+                <div class="product-content ">
+                    <div class="product1 product">
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/manzana.jpg" alt="Manzana">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Manzana</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/banana.jpg" alt="Banana">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Banana</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="2">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/naranja.jpg" alt="Naranja">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Naranja</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="3">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/uva.jpg" alt="Uva">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Uva</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="4">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/pera.jpg" alt="Pera">
+                                <div class="description">Descripción del Producto </div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Pera</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="5">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/piña.jpg" alt="Piña">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Piña</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="6">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/mango.jpg" alt="Mango">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Mango</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="7">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/fresa.jpg" alt="Fresa">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Fresa</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="8">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/cereza.jpg" alt="Cereza">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Cereza</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="9">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/kiwi.jpg" alt="Kiwi">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Kiwi</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="10">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/papaya.jpg" alt="Papaya">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Papaya</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="11">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/sandia.jpg" alt="Sandía">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Sandía</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="12">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/melon.jpg" alt="Melón">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Melón</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="13">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/durazno.jpg" alt="Durazno">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Durazno</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="14">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/limon.jpg" alt="Limón">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Limón</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="15">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/frambuesa.jpg" alt="Frambuesa">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Frambuesa</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="16">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/mandarina.jpg" alt="Mandarina">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Mandarina</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="17">Agregar</a>
+                            </div>
+                        </div>
+                        <div class="prod" style="margin: 25px 50px;">
+                            <div class="product product-item">
+                                <img src="../img/ciruela.jpg" alt="Ciruela">
+                                <div class="description">Descripción del Producto</div>
+                            </div>
+                            <div class="product-txt">
+                                <h3>Ciruela</h3>
+                                <p class="precio">$1,000 / kg</p>
+                                <a href="#" class="agregar-carrito btn-2" data-id="18">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <section class="conten">
-            <h2>Nuestras frutas</h2>
-
-            <div class="contenedor-frutas">
-                <div class="expan">
-                    <img src="../img/manzana.jpg" alt="Manzana">
-                    <h3>Manzana</h3>
-                    <p>Precio: $1 000/kg</p>
+        <div id="carouselExampleFade" class="carousel slide carousel-fade">
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="z-index: 0;">
+                    <img src="../img/carusel.jpg" class="d-block w-100" alt="...">
                 </div>
-                <div class="expan">
-                    <img src="../img/banana.jpg" alt="Banana">
-                    <h3>Banana</h3>
-                    <p>Precio: $1 000/kg</p>
+                <div class="carousel-item">
+                    <img src="../img/carusel2.jpg" class="d-block w-100" alt="...">
                 </div>
-                <div class="expan">
-                    <img src="../img/naranja.jpg" alt="Naranja">
-                    <h3>Naranja</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/uva.jpg" alt="Uva">
-                    <h3>Uva</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/pera.jpg" alt="Pera">
-                    <h3>Pera</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/piña.jpg" alt="Piña">
-                    <h3>Piña</h3>
-                    <p>Precio: $1 000/kg</p>
+                <div class="carousel-item">
+                    <img src="../img/carusel3.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
-            <div class="contenedor-frutas">
-                <div class="expan">
-                    <img src="../img/mango.jpg" alt="Mango">
-                    <h3>Mango</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/fresa.jpg" alt="Fresa">
-                    <h3>Fresa</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/cereza.jpg" alt="Cereza">
-                    <h3>Cereza</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/kiwi.jpg" alt="Kiwi">
-                    <h3>Kiwi</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/papaya.jpg" alt="Papaya">
-                    <h3>Papaya</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/sandia.jpg" alt="Sandía">
-                    <h3>Sandía</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-            </div>
-            <div class="contenedor-frutas">
-                <div class="expan">
-                    <img src="../img/melon.jpg" alt="Melón">
-                    <h3>Melón</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/durazno.jpg" alt="Durazno">
-                    <h3>Durazno</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/limon.jpg" alt="Limón">
-                    <h3>Limón</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/frambuesa.jpg" alt="Frambuesa">
-                    <h3>Frambuesa</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/mandarina.jpg" alt="Mandarina">
-                    <h3>Mandarina</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/ciruela.jpg" alt="Ciruela">
-                    <h3>Ciruela</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="conten">
-            <h2>Nuestras hortalizas</h2>
-            <div class="contenedor-frutas">
-                <div class="expan">
-                    <img src="../img/ajo.jpg" alt="Ajo">
-                    <h3>Ajo</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/auyama.jpg" alt="Auyama">
-                    <h3>Auyama</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/cebolla.jpg" alt="Cebolla">
-                    <h3>Cebolla</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/maiz.jpg" alt="Maiz">
-                    <h3>Maiz</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/papa.jpg" alt="Papa">
-                    <h3>Papa</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/pimenton.jpg" alt="Pimenton">
-                    <h3>Pimenton</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-            </div>
-                <div class="contenedor-frutas">
-                <div class="expan">
-                    <img src="../img/platano.jpg" alt="Platano">
-                    <h3>Platano</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/remolacha.jpg" alt="Remolacha">
-                    <h3>Remolacha</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/repollo.jpg" alt="Repollo">
-                    <h3>Repollo</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/tomate.jpg" alt="Tomate">
-                    <h3>Tomate</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/zanahoria.jpg" alt="Zanahoria">
-                    <h3>Zanahoria</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/coliflor.jpg" alt="Coliflor">
-                    <h3>Coliflor</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-            </div>
-            <div class="contenedor-frutas">
-                <div class="expan">
-                    <img src="../img/rucula.jpg" alt="Rucula">
-                    <h3>Rucula</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/rabano.jpg" alt="Rabano">
-                    <h3>Rabano</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/lechuga.jpg" alt="Lechuga">
-                    <h3>Lechuga</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/brocoli.jpg" alt="Brocoli">
-                    <h3>Brocoli</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/berenjena.jpg" alt="Berenjena">
-                    <h3>Berenjena</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-                <div class="expan">
-                    <img src="../img/acelga.jpg" alt="Acelga">
-                    <h3>Acelga</h3>
-                    <p>Precio: $1 000/kg</p>
-                </div>
-            </div>
-        </section>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </main>
 
     <footer>
@@ -270,6 +543,9 @@
             </div>
         </div>
     </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

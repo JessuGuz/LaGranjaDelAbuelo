@@ -5,12 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - La Granja del Abuelo</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/style-header.css">
-    <link rel="stylesheet" href="../css/style-main.css">
-    <link rel="stylesheet" href="../css/style-footer.css">
-    <link rel="stylesheet" href="../css/style-media.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style-contacto.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
@@ -45,27 +42,29 @@
             </div>
         </section>
 
-            <div class="reseña">
-                <p><i class="ri-home-5-line"></i> Av. Corrientes 1234, CABA, Argentina</p>
-                <p><i class="ri-phone-fill"></i> +54 9 (11) 2222-5555</p>
-                <p><i class="ri-mail-line"></i> atencionalcliente@lagranjadelabuelo.com</p>
-            </div>
+        <div class="reseña">
+            <p><i class="ri-home-5-line"></i> Av. Corrientes 1234, CABA, Argentina</p>
+            <p><i class="ri-phone-fill"></i> +54 9 (11) 2222-5555</p>
+            <p><i class="ri-mail-line"></i> atencionalcliente@lagranjadelabuelo.com</p>
+        </div>
         </section>
 
         <section class="nueva-reseña">
             <h2>Dejanos tu mensaje</h2>
-            <form action="#" method="post">
-                <label for="nombre">Nombre y Apellido</label>
-                <input type="text" id="nombre" name="nombre" required>
+            <div id="formulario-contacto">
+                <form id="form-contacto" action="https://formspree.io/f/mvgoegrd" method="post">
+                    <label for="nombre">Nombre y Apellido</label>
+                    <input type="text" id="nombre" name="nombre" required>
 
-                <label for="email">Correo Electrónico</label>
-                <input type="email" id="email" name="email" required>
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required>
 
-                <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
 
-                <button type="submit">Enviar</button>
-            </form>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
         </section>
     </main>
 
@@ -92,7 +91,7 @@
             </div>
         </div>
     </footer>
-
+    <script src="../js/script-contacto.js"></script>
 </body>
 
 </html>

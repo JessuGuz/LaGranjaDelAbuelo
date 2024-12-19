@@ -1,0 +1,71 @@
+@import url("../css/style.css");
+
+.reseñas {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.res {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    transition: box-shadow 0.3s ease;
+    color: #4d4d33;
+    justify-content: flex-start;
+}
+
+.reseña-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.reseña-item h3 {
+    margin: 0 0 5px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.reseña-item p {
+    margin: 0;
+    font-size: 1em;
+    color: #555;
+}
+
+.texto-reseña {
+    display: flex;
+    flex-direction: column;
+    color: #4d4d33;
+}
+
+.texto-reseña h3 {
+    font-size: 1.2em;
+    margin: 0;
+    font-weight: bold;
+}
+
+.texto-reseña p {
+    font-size: 1em;
+    margin-top: 5px;
+    text-align: justify;
+    line-height: 1.5;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-style: italic;
+}
+
+.foto {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    margin-left: 40px;
+    border: 3px solid #a4c47e;
+}

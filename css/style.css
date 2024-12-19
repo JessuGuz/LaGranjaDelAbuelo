@@ -1,13 +1,13 @@
-/*@import url("/css/style-header.css");
-@import url("/css/style-main.css");
-@import url("/css/style-footer.css");
-@import url("/css/style-media.css");
-@import url("");
-@import url("");*/
+@import url("../css/style-header.css");
+@import url("../css/style-main.css");
+@import url("../css/style-footer.css");
+@import url("../css/style-media.css");
+/*@import url("");
+@import url("");*/  
 
 * {
     box-sizing: border-box;
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif  !important;
 }
 
 body,
@@ -21,6 +21,7 @@ html {
 
 header {
     overflow: hidden;
+    text-align: center;
     width: 100%;
 }
 

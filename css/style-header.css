@@ -3,7 +3,7 @@
     padding: 10px 20px;
     position: relative;
     z-index: 1;
-    min-height: 200px;
+    min-height: auto;
 }
 
 .fondo {
@@ -12,7 +12,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+   /*  overflow: hidden; */
     z-index: -1;
 }
 
@@ -28,7 +28,6 @@
 .encabezado h1 {
     font-size: 3.5em;
     flex: 1;
-    align-self: center;
 }
 
 .encabezado h1 a {
@@ -39,6 +38,7 @@
 .navegacion {
     display: flex;
     align-items: flex-end;
+    justify-content: center;
 }
 
 .menu {
@@ -57,13 +57,5 @@
     background: #a5c47ec1;
     color: #f0f0f0;
     border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
     transition: background 1s;
-    -webkit-transition: background 1s;
-    -moz-transition: background 1s;
-    -ms-transition: background 1s;
-    -o-transition: background 1s;
 }
