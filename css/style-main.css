@@ -115,28 +115,6 @@ button[type="submit"]:hover {
     background-color: #8aae65;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .contenedor-frutas:hover .expan:not(:hover) {
     opacity: 0.5;
 }
