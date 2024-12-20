@@ -15,7 +15,6 @@
     align-items: center;
 }
 
-
 .modal {
     display: none;
     position: fixed;
@@ -24,6 +23,7 @@
     width: auto;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 
 .modal-contenido {

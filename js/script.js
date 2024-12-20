@@ -1,20 +1,10 @@
-// Inicializar carrito de compras desde LocalStorage
 let carrito = JSON.parse(localStorage.getItem("carritoLocal")) || [];
 
-// Stock inicial por id de producto
-/* let stock = {
-  1: 10, 2: 15, 3: 20, 4: 12, 5: 5, 6: 8, 7: 9, 8: 10,
-  9: 7, 10: 14, 11: 10, 12: 11, 13: 13, 14: 6, 15: 10,
-  16: 10, 17: 15, 18: 20, 19: 12, 20: 5, 21: 8, 22: 9, 23: 10,
-  24: 7, 25: 14, 26: 10, 27: 11, 28: 13, 29: 6, 30: 10,
-  31: 10, 32: 15, 33: 20, 34: 12, 35: 5, 36: 8,
-}; */
 let stock = {};
 for (let i = 1; i <= 36; i++) {
-  stock[i] = Math.floor(Math.random() * (20 - 5 + 1)) + 5; // Valores entre 5 y 20
+  stock[i] = Math.floor(Math.random() * (20 - 5 + 1)) + 5; 
 }
 
-// Referencias a elementos del DOM
 const modalCarrito = document.getElementById("modal-carrito");
 const listaCarrito = document.getElementById("lista-carrito");
 const totalCarrito = document.getElementById("total-carrito");
@@ -127,9 +117,22 @@ cerrarCarrito.addEventListener("click", () => {
   modalCarrito.style.display = "none";
 });
 
-document.getElementById('comprar-btn').addEventListener('click', () => {
-    document.getElementById('formulario-pago').style.display = 'flex';
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('comprar-btn').addEventListener('click', () => {
+      const listaCarrito = document.getElementById('lista-carrito');
+
+      if (!listaCarrito) {
+          alert('No se encontró el contenedor del carrito.');
+          return;
+      }
+
+      if (listaCarrito.children.length > 0) {
+          document.getElementById('formulario-pago').style.display = 'flex';
+      } else {
+          alert('El carrito está vacío. Agrega productos antes de continuar.');
+      }
   });
+});
   
   document.getElementById('cerrar-formulario').addEventListener('click', () => {
     document.getElementById('formulario-pago').style.display = 'none';
@@ -151,7 +154,7 @@ document.getElementById('comprar-btn').addEventListener('click', () => {
       .then(response => {
         if (response.ok) {
           alert('¡Compra realizada con éxito!');
-          document.getElementById('formulario-pago').style.display = 'none'; // Cerrar formulario
+          document.getElementById('formulario-pago').style.display = 'none'; 
         } else {
           alert('Hubo un error al procesar el pago.');
         }
